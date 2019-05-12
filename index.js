@@ -23,5 +23,9 @@ nameTable.addEventListener('click', e => {
   if (e.target.cellIndex !== undefined) {
     let text = e.target.textContent;
     console.log(elements[text]);
+    document.getElementById('name').textContent = elements[text].name;
+    document.getElementById('info').textContent = elements[text].group;
+    document.getElementById('number').textContent = elements[text].number;
+    document.getElementById('symbol').textContent = elements[text].symbol;
   }
 }, false);
