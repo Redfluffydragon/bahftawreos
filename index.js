@@ -1,11 +1,11 @@
 if (window.location !== window.parent.location) {
-  window.top.location.href = 'https://Redfluffydragon.github.io/bahftawreos/';
+  // window.top.location.href = 'https://Redfluffydragon.github.io/bahftawreos/';
   //get around too many redirects somehow
   /* let redirect = document.createElement('a');
   redirect.href = 'https://Redfluffydragon.github.io/bahftawreos/';
   redirect.textContent = 'Redirect';
-  document.body.appendChild(redirect); */
-  // redirect.click();
+  document.body.appendChild(redirect);
+  redirect.click(); */
 }
 
 const elements = {
@@ -21,11 +21,11 @@ let nameTable = document.getElementById('nameTable');
 
 nameTable.addEventListener('click', e => {
   if (e.target.cellIndex !== undefined) {
-    let text = e.target.textContent;
-    console.log(elements[text]);
-    document.getElementById('name').textContent = elements[text].name;
-    document.getElementById('info').textContent = elements[text].group;
-    document.getElementById('number').textContent = elements[text].number;
-    document.getElementById('symbol').textContent = elements[text].symbol;
+    let element = elements[e.target.textContent];
+    console.log(element);
+    document.getElementById('name').textContent = element.name;
+    document.getElementById('info').textContent = element.group;
+    document.getElementById('number').textContent = element.number;
+    document.getElementById('symbol').textContent = element.symbol;
   }
 }, false);
